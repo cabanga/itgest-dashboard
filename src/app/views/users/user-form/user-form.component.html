@@ -1,0 +1,58 @@
+<div class="card mb-0">
+    <div class="block-header bg-primary-dark">
+        <h3 *ngIf="isNew" class="block-title">Registo de utilizador</h3>
+        <h3 *ngIf="!isNew" class="block-title">Actualizar utilizador</h3>
+
+        <div class="block-options">
+            <button type="button" class="btn-block-option" data-dismiss="modal" aria-label="Close"><i class="fa fa-fw fa-times"></i></button>
+        </div>
+    </div>
+
+    <div class="block-content font-size-md">
+        <div class="form-group">
+            <label for="name">Nome do utilizador</label>
+            <input 
+              [(ngModel)]="user.name" id="name" name="name" 
+              placeholder="John Doe" type="text" class="form-control"
+            >
+        </div>
+
+        <div class="form-group">
+            <label for="email">E-mail</label>
+            <input 
+              [(ngModel)]="user.email" id="email" name="email" 
+              placeholder="text@email.co.ao" type="email" class="form-control"
+            >
+        </div>
+
+        <div class="form-group">
+            <label for="role">Tipo de utilizador</label>
+            <select class="form-control" [(ngModel)]="user.role" id="role" name="role">
+                <option value="0" selected>Moderador</option>
+                <option value="10">Administrador</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="password">Senha provisória</label>
+            <input 
+              [(ngModel)]="user.password" id="password" name="password" 
+              placeholder="******" type="password" class="form-control"
+            >
+        </div>
+
+    </div>
+
+    <div class="block-content block-content-full text-right border-top">
+        <button type="button" class="btn btn-sm btn-danger" data-dismiss="modal">Cancelar</button>
+        <button *ngIf="isNew" (click)="_saveUser()" [disabled]="loadingSpinner" class="ml-2 btn btn-p3 button">
+            <i class="fa fa-check mr-1"></i>Registar
+            <div *ngIf="loadingSpinner" class="spinner-border"></div>
+        </button>
+
+        <button *ngIf="!isNew" (click)="_updateUser()" [disabled]="loadingSpinner" class="ml-2 btn btn-p3 button">
+            <i class="fa fa-check mr-1"></i>Actualizar
+            <div *ngIf="loadingSpinner" class="spinner-border"></div>
+        </button>
+    </div>
+</div>

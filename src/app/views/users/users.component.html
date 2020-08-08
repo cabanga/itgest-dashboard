@@ -1,0 +1,68 @@
+<a href="#" routerLink="/users/register" class="btn btn-success mb-2">
+  Registar utilizador
+</a>
+
+
+
+<div class="animated fadeIn">
+    <div class="row">
+
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card-header">
+                    <i class="fa fa-align-justify"></i> Lista dos utilizadores
+                </div>
+                <div class="card-body">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                            <th>Nome</th>
+                            <th>E-mail</th>
+                            <th>Role</th>
+                            <th>Estado</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let user of users">
+                                <td>{{user.name}}</td>
+                                <td>{{user.email}}</td>
+                                <td>{{user.role}}</td>
+                                <td>
+                                    <span class="badge badge-success">Active</span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <!--/.col-->
+    </div>
+</div>
+
+  
+
+
+
+
+<!-- 
+
+
+
+
+
+
+
+
+
+
+
+
+  <button type="button" class="btn btn-sm btn-primary push" data-toggle="modal" data-target="#modal-create-user">
+    <i class="fa fa-plus mr-1"></i> Registar utilizador
+</button>
+
+<app-user-form [user]="user" [isNew]="true" ></app-user-form>
+
+
+ -->

@@ -57,7 +57,7 @@ import { ChartsModule } from 'ng2-charts';
     LoginComponent,
     RegisterComponent
   ],
-  
+
   imports: [
     BrowserModule,
     BrowserAnimationsModule,

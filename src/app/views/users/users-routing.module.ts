@@ -1,3 +1,4 @@
+import { UserListComponent } from './user-list/user-list.component';
 import { UserFormComponent } from './user-form/user-form.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
@@ -17,18 +18,20 @@ const routes: Routes = [
         component: UsersComponent,
         data: { title: 'Utilizadores' },
         children: [
-            {
-                path: '',
-                redirectTo: 'users'
-            },
-            {
-                path: 'register',
-                component: UserFormComponent,
-                data: {
-                    title: 'Registar utilizador'
-                }
+          {
+            path: '',
+            component: UserListComponent,
+            data: {
+              title: 'Registar utilizador'
             }
-
+          },
+          {
+            path: 'register',
+            component: UserFormComponent,
+            data: {
+              title: 'Registar utilizador'
+            }
+          }
         ]
     }
 ];
